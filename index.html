@@ -2,72 +2,101 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>CAMI Alert</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CAMI Alert</title>
   <style>
-    html, body {
+    body {
+      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      height: 100%;
-      background: #ffffff;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .container {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
       text-align: center;
-      padding: 24px;
+      background-color: #fff;
     }
 
-    .logo {
-      width: 320px;
-      max-width: 80vw;
-      margin-bottom: 32px;
+    header {
+      position: relative;
+      padding: 1rem;
+    }
+
+    .menu-toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .nav {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 4rem;
+      right: 1rem;
+      background: white;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: black;
+      padding: 1rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    .nav a:hover {
+      background: #f2f2f2;
+    }
+
+    .show-menu {
+      display: flex;
+    }
+
+    img {
+      width: 200px;
+      margin: 2rem auto;
     }
 
     h1 {
-      font-size: 2.4rem;
-      margin: 0 0 16px 0;
-      font-weight: 600;
+      font-size: 2rem;
+      font-weight: bold;
     }
 
     p {
-      font-size: 1.2rem;
       max-width: 600px;
-      line-height: 1.6;
-      color: #333;
-    }
-
-    @media (max-width: 600px) {
-      .logo {
-        width: 240px;
-      }
-
-      h1 {
-        font-size: 1.8rem;
-      }
-
-      p {
-        font-size: 1.05rem;
-      }
+      margin: 1rem auto;
+      padding: 0 1rem;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="./logo.png" alt="CAMI Logo" class="logo" />
+  <header>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav class="nav" id="menu">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Download</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
 
+  <main>
+    <img src="logo.png" alt="CAMI Alert Logo" />
     <h1>Empowerment, not surveillance.</h1>
-
     <p>
-      CAMI is a wearable safety platform built to increase the sense of security
-      in public spaces. It provides peace of mind and direct support when
-      situations escalate — with users always in control.
+      CAMI is a wearable safety platform built to increase the sense of security in public spaces.
+      It provides peace of mind and direct support when situations escalate —
+      with users always in control.
     </p>
-  </div>
+  </main>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('show-menu');
+    }
+  </script>
 </body>
 </html>
