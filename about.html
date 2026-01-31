@@ -10,32 +10,49 @@
       margin: 0;
       text-align: center;
       background-color: #fff;
-      padding: 2rem;
+      padding: 1rem;
     }
 
     a {
-      display: block;
-      margin-bottom: 2rem;
+      display: inline-block;
+      margin: 1rem 0 2rem 0;
       color: #007BFF;
       text-decoration: none;
+      font-size: 1rem;
     }
 
     h1 {
-      font-size: 1.8rem;
+      font-size: 2rem;
       margin-bottom: 1rem;
     }
 
     p {
       max-width: 600px;
       margin: 0 auto;
+      padding: 0 1rem;
+      font-size: 1.1rem;
       line-height: 1.6;
     }
 
     footer {
-      margin-top: 4rem;
+      margin-top: 3rem;
       padding: 1rem;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: #777;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      a {
+        font-size: 0.95rem;
+      }
     }
   </style>
 </head>
