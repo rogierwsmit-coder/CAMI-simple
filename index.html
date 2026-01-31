@@ -55,7 +55,7 @@
     }
 
     img {
-      width: 200px;
+      width: 320px;
       margin: 2rem auto;
     }
 
@@ -69,32 +69,62 @@
       margin: 1rem auto;
       padding: 0 1rem;
     }
+
+    #about-section {
+      display: none;
+      margin-top: 2rem;
+      padding: 1rem;
+      background: #f9f9f9;
+      border-top: 1px solid #eee;
+    }
+
+    @media (max-width: 600px) {
+      img {
+        width: 240px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 1.05rem;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     <nav class="nav" id="menu">
-      <a href="#">Home</a>
-      <a href="#">About</a>
+      <a href="#" onclick="showAbout()">About</a>
     </nav>
   </header>
 
   <main>
-    <img src="logo.png" alt="CAMI Alert Logo" style="width: 320px;" />
-
+    <img src="logo.png" alt="CAMI Logo" />
     <h1>Empowerment, not surveillance.</h1>
     <p>
-      CAMI is a wearable safety platform built to increase the sense of security in public spaces.
-      It provides peace of mind and direct support when situations escalate —
-      with users always in control.
+      CAMI is a wearable safety platform built to increase the sense of security
+      in public spaces. It provides peace of mind and direct support when
+      situations escalate — with users always in control.
     </p>
+
+    <div id="about-section">
+      <strong>About CAMI</strong><br />
+      CAMI is a personal safety platform combining a wearable bodycam, context-aware AI, and secure cloud storage. It empowers users in high-risk situations with early escalation detection and visible recording — without compromising privacy. CAMI is not a surveillance tool, but a smart safety device, always under the user’s control.
+    </div>
   </main>
 
   <script>
     function toggleMenu() {
       const menu = document.getElementById('menu');
       menu.classList.toggle('show-menu');
+    }
+
+    function showAbout() {
+      document.getElementById('about-section').style.display = 'block';
+      document.getElementById('menu').classList.remove('show-menu');
     }
   </script>
 </body>
